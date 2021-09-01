@@ -289,7 +289,7 @@ int main(int argc, char ** argv)
     raster.resize(3);
     printf( "Convert to LAB colorspace.\n" );
     merge( raster, rgb );
-    cvtColor( rgb, lab, cv::COLOR_RGB2Lab ); // renamed function to adapt to newer OpneCV versions.
+    cvtColor( rgb, lab, cv::COLOR_RGB2Lab ); // renamed function to adapt to newer OpenCV versions.
     split(lab, raster);
   }
 
