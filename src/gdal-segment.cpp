@@ -53,6 +53,7 @@
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
+#include <opencv2/imgproc/types_c.h> // added import as user "dessasin" suggested in Issues.
 #include <opencv2/ximgproc.hpp>
 #include <opencv2/hdf/hdf5.hpp>
 
@@ -288,7 +289,7 @@ int main(int argc, char ** argv)
     raster.resize(3);
     printf( "Convert to LAB colorspace.\n" );
     merge( raster, rgb );
-    cvtColor( rgb, lab, CV_RGB2Lab );
+    cvtColor( rgb, lab, cv::COLOR_RGB2Lab ); // renamed function to adapt to newer OpneCV versions.
     split(lab, raster);
   }
 
